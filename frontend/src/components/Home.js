@@ -2,7 +2,7 @@ import React, { Component, useState, useEffect} from 'react';
 import {
     Row, Col, Image, ListGroup, Card, Button, Form, Modal, Jumbotron, Container,
   } from 'react-bootstrap';
-  import background from './background.jpeg'; 
+  import background from './home_back.jpeg'; 
   
   function Home() {
     const [show, setShow] = useState(false);
@@ -58,22 +58,19 @@ import {
   
     return (
       
-      <div className="App">
+      <div className="App" >
         <header className="App-header">
-        <Jumbotron style={{ backgroundImage: `url(${background})`, backgroundSize: 'cover', height: '300px', backgroundPosition: 'center'}}>
-              <h1 style={{ color: 'white' }}>
+        <Jumbotron style={{ backgroundImage: `url(${background})`, backgroundSize: 'cover', height: '48rem', backgroundPosition: 'center'}}>
+              <h1 style={{ color: 'black' }}>
                 {' '}
                Flight Search Assistant
               </h1>
-              <p style={{ color: 'white' }}>
+              <p style={{ color: 'black' }}>
                 •
                 Plan your vacation with cheap flights
                 •
               </p>
-            </Jumbotron>
-  
-  
-        </header>
+            
         <Container>
         <Row>
               <Col sm={5} md={4} lg={2}>
@@ -198,7 +195,10 @@ import {
   
                     </Container>
        
-      
+        </Jumbotron>
+  
+  
+  </header>
       
       </div>
       
