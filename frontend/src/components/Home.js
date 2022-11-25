@@ -31,16 +31,16 @@ import {
     }
     const getFlightData = (event) => {
         event.preventDefault();
-        //   let week = DepartureDate.split('-')[1];
-        //   let month = DepartureDate.split('-')[2];
-        //   // alert(week + " " + month);
-        //   if(week[0] === '0'){
-        //     week = week.substring(1, week.length);
-        //   }
-        //   if(month[0] === '0'){
-        //     month = month.substring(1, month.length);
-        //   }
+          let week = DepartureDate.split('-')[1];
+          let month = DepartureDate.split('-')[2];
           // alert(week + " " + month);
+          if(week[0] === '0'){
+            week = week.substring(1, week.length);
+          }
+          if(month[0] === '0'){
+            month = month.substring(1, month.length);
+          }
+          alert(week + " " + month);
           fetch(`http://localhost:6000/api/${Carrier}`)
             .then(res => res.json())
             .then(
@@ -114,10 +114,10 @@ import {
           <label className="text-muted">From:</label>
           <input  type="text" onChange={(event)=>setOrigin(event.target.value)} className="form-control" placeholder="Leaving from" value={origin}/>
           </Col>
-          {/* <Col>
+          <Col>
           <label className="text-muted" >Departure Date:</label>
           <input  type="date" onChange={(event)=>setDepartureDate(event.target.value)}  className="form-control" value={DepartureDate}/>
-          </Col> */}
+          </Col>
   
           </Row><hr></hr>
           <Row>
@@ -125,10 +125,10 @@ import {
           <label className="text-muted">To:</label>
           <input  type="text" onChange={(event)=>setDestination(event.target.value)} className="form-control" placeholder="Going to" value={destination}/>
           </Col>
-          {/* <Col>
+          <Col>
           <label className="text-muted">Arrival Date:</label>
           <input  type="date" className="form-control"/>
-          </Col> */}
+          </Col>
           </Row>
          
         </div>
