@@ -29,7 +29,6 @@ import {
         if(destination)
         flights = flights.filter((review)=> review.destination_city === destination);
     }
-
     const getFlightData = (event) => {
         event.preventDefault();
         //   let week = DepartureDate.split('-')[1];

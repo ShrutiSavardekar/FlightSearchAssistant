@@ -18,6 +18,7 @@ function App() {
       <Nav.Link href="/">Signin</Nav.Link>
       <Nav.Link href="/signup">Signup</Nav.Link>
       <Nav.Link href="/analysis">Analytics</Nav.Link>
+      <Nav.Link href="/"> Logout </Nav.Link>
     </Nav>
     </Container>
   </Navbar>
@@ -27,6 +28,7 @@ function App() {
           <Route exact path="/home"  component={Home} />
           <Route exact path="/signup"  component={Signup} />
           <Route exact path="/analysis"  component={Analysis} />
+          <Route exact path="/logout"  component={Landingpage} />
         </Switch>
       </main>
     </Container>

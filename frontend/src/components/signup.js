@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import usd_flightsearch from './usd_flightsearch.jpeg'; 
+import usd_flightsearch from './Flight.jpeg'; 
 import {Redirect} from 'react-router-dom';
 
 function Signup(props) {
