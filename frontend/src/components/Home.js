@@ -2,7 +2,8 @@ import React, { Component, useState, useEffect} from 'react';
 import {
     Row, Col, Image, ListGroup, Card, Button, Form, Modal, Jumbotron, Container,
   } from 'react-bootstrap';
-  import background from './home_back.jpeg'; 
+import { alignPropType } from 'react-bootstrap/esm/DropdownMenu';
+  import background from './background.jpeg'; 
   
   function Home() {
     const [show, setShow] = useState(false);
@@ -40,7 +41,7 @@ import {
           if(month[0] === '0'){
             month = month.substring(1, month.length);
           }
-          alert(week + " " + month);
+          // alert(week + " " + month);
           fetch(`http://localhost:6000/api/${Carrier}`)
             .then(res => res.json())
             .then(
@@ -61,7 +62,7 @@ import {
       <div className="App" >
         <header className="App-header">
         <Jumbotron style={{ backgroundImage: `url(${background})`, backgroundSize: 'cover', height: '48rem', backgroundPosition: 'center'}}>
-              <h1 style={{ color: 'black' }}>
+              {/* <h1 style={{ color: 'black' }}>
                 {' '}
                Flight Search Assistant
               </h1>
@@ -69,11 +70,12 @@ import {
                 •
                 Plan your vacation with cheap flights
                 •
-              </p>
+              </p> */}
             
         <Container>
+        
         <Row>
-              <Col sm={5} md={4} lg={2}>
+              <Col sm={5} md={1} lg={2}>
                 </Col>
               <Col>
                 <ListGroup>
@@ -88,8 +90,9 @@ import {
                 <hr></hr>
             
             <div className="form">
+            
+        <form style={{width: "50%"}}>
         
-        <form>
         {error && <div className="alert alert-danger" style={{backgroundColor: '#a98e91'}}>All fields are required</div>}
         <div className="form-group">
         <div className="form-group">
@@ -109,39 +112,139 @@ import {
             <option value="FL">FL</option>
           </select>
       </div>
-          <Row>
-         <Col>
+        <Row>
+          <Col>
+          <div className="form-group">
           <label className="text-muted">From:</label>
-          <input  type="text" onChange={(event)=>setOrigin(event.target.value)} className="form-control" placeholder="Leaving from" value={origin}/>
+          <select   onChange={(event)=>setOrigin(event.target.value)} className="form-control" placeholder="Enter Origin" value={origin}>
+           <option value="10165">Adak Island</option>
+           <option value="10299">Anchorage</option>
+           <option value="10304">Aniak</option>
+            <option value="10754">Barrow</option>
+            <option value="10551">Bethel</option>
+           <option value="10926">Cordova</option>
+           <option value="14709">Deadhorse</option>
+            <option value="11336">Dillingham</option>
+            <option value="11630">Fairbanks</option>
+           <option value="11997">Gustavus</option>
+           <option value="12523">Juneau</option>
+            <option value="12819">Ketchikan</option>
+            <option value="10245">King Salmon</option>
+            <option value="10170">Kodiak</option>
+            <option value="13970">Kotzebue</option>
+            <option value="13873">Nome</option>
+            <option value="14256">Petersburg</option>
+            <option value="14828">Sitka</option>
+            <option value="12807">St. Mary's</option>
+            <option value="11445">Unalaska</option>
+            <option value="15841">Wrangell</option>
+            <option value="15991">Yakutat</option>
+            <option value="10599">Birmingham</option>
+            <option value="11869">Grand Canyon</option>
+            <option value="14107">Phoenix</option>
+            <option value="15376">Tucson</option>
+            <option value="10800">Burbank</option>
+            <option value="11041">Carlsbad</option>
+            <option value="11002">Chico</option>
+            <option value="10910">Concord</option>
+            <option value="10930">Crescent City</option>
+            <option value="11638">Fresno</option>
+            <option value="15383">Lake Tahoe</option>
+            <option value="12954">Long Beach</option>
+            <option value="12892">Los Angeles</option>
+            <option value="13388">Mammoth Lakes</option>
+            <option value="13796">Oakland</option>
+            <option value="14262">Palm Springs</option>
+            <option value="14487">Redding</option>
+            <option value="14893">Sacramento</option>
+            <option value="14679">San Diego</option>
+            <option value="14771">San Francisco</option>
+            <option value="14831">San Jose</option>
+            <option value="14698">San Luis Obispo</option>
+          </select>
+      </div>
           </Col>
+        
+          </Row><hr></hr>
+          <Row>
+          <Col>
+          <div className="form-group">
+          <label className="text-muted">To:</label>
+          <select   onChange={(event)=>setDestination(event.target.value)} className="form-control" placeholder="Enter Destination" value={destination}>
+           <option value="10165">Adak Island</option>
+           <option value="10299">Anchorage</option>
+           <option value="10304">Aniak</option>
+            <option value="10754">Barrow</option>
+            <option value="10551">Bethel</option>
+           <option value="10926">Cordova</option>
+           <option value="14709">Deadhorse</option>
+            <option value="11336">Dillingham</option>
+            <option value="11630">Fairbanks</option>
+           <option value="11997">Gustavus</option>
+           <option value="12523">Juneau</option>
+            <option value="12819">Ketchikan</option>
+            <option value="10245">King Salmon</option>
+            <option value="10170">Kodiak</option>
+            <option value="13970">Kotzebue</option>
+            <option value="13873">Nome</option>
+            <option value="14256">Petersburg</option>
+            <option value="14828">Sitka</option>
+            <option value="12807">St. Mary's</option>
+            <option value="11445">Unalaska</option>
+            <option value="15841">Wrangell</option>
+            <option value="15991">Yakutat</option>
+            <option value="10599">Birmingham</option>
+            <option value="11869">Grand Canyon</option>
+            <option value="14107">Phoenix</option>
+            <option value="15376">Tucson</option>
+            <option value="10800">Burbank</option>
+            <option value="11041">Carlsbad</option>
+            <option value="11002">Chico</option>
+            <option value="10910">Concord</option>
+            <option value="10930">Crescent City</option>
+            <option value="11638">Fresno</option>
+            <option value="15383">Lake Tahoe</option>
+            <option value="12954">Long Beach</option>
+            <option value="12892">Los Angeles</option>
+            <option value="13388">Mammoth Lakes</option>
+            <option value="13796">Oakland</option>
+            <option value="14262">Palm Springs</option>
+            <option value="14487">Redding</option>
+            <option value="14893">Sacramento</option>
+            <option value="14679">San Diego</option>
+            <option value="14771">San Francisco</option>
+            <option value="14831">San Jose</option>
+            <option value="14698">San Luis Obispo</option>
+          </select>
+      </div>
+          </Col>
+          {/* <Col>
+          <label className="text-muted">Arrival Date:</label>
+          <input  type="date" className="form-control"/>
+          </Col> */}
+          </Row>
+          <Row>
           <Col>
           <label className="text-muted" >Departure Date:</label>
           <input  type="date" onChange={(event)=>setDepartureDate(event.target.value)}  className="form-control" value={DepartureDate}/>
           </Col>
-  
-          </Row><hr></hr>
-          <Row>
-         <Col>
-          <label className="text-muted">To:</label>
-          <input  type="text" onChange={(event)=>setDestination(event.target.value)} className="form-control" placeholder="Going to" value={destination}/>
-          </Col>
-          <Col>
-          <label className="text-muted">Arrival Date:</label>
-          <input  type="date" className="form-control"/>
-          </Col>
-          </Row>
-         
+         </Row>
         </div>
        
+      
           <Button type="submit" value="Search" variant="info" onClick={(event)=>getFlightData(event)}>
             Search
           </Button>
-          
+         
+
       </form>
       
         </div>
               </Col>
+        
         </Row>
+
+       
         </Container>
                  <Container>
                  {flights && flights.map((flight, i) => (
@@ -178,6 +281,7 @@ import {
           </Button>
              </Card.Body>
            </Card>
+           
            </Col>
                    </Row>
                

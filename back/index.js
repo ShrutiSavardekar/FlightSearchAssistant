@@ -42,7 +42,7 @@ const mapper = new Mapper(client, {
     }}
   })
 
-const flightsMapper = mapper.forModel('flightdetails');
+const flightsMapper = mapper.forModel('flights');
 
 export {
     flightsMapper 

@@ -5,8 +5,11 @@ import {flightsMapper} from '../index.js';
 // export const getFlights = async (req, res) => {
     
 //      carrier = carrier ? carrier: 'DL';
+     
 //     try{
-//         const query = 'SELECT * FROM flightnewtable WHERE carrier = ?';
+
+//         const query = "SELECT * FROM flights.flightdetails WHERE carrier = ? AND destairportid = ? AND dayofmonth=? AND dayofweek=? AND originairportid=? ALLOW FILTERING";
+//         // const query = 'SELECT * FROM flightnewtable WHERE carrier = ?';
 //         flightsMapper.getFlights = flightsMapper.mapWithQuery(query,flight => [ flight.carrier]);
 
 //         const flightsData = await flightsMapper.getFlights({carrier: 'DL'});
